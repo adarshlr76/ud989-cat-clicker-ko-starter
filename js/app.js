@@ -29,7 +29,7 @@ var ViewModel = function() {
 	this.CurrentCat = ko.observable(new Cat());
 	
 	this.incrementCounter = function () {
-		this.CurrentCat().count(this.CurrentCat().count() + 1);
+		this.count(this.count() + 1);
 	
 	}
 	//console.log(this.name);

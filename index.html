@@ -6,15 +6,15 @@
 </head>
 <body>
     <ul ></ul>
-    <div >
+    <div data-bind = "with :CurrentCat ">
 
-        <h2 data-bind="text:CurrentCat().name"></h2>
-        <p data-bind="text: CurrentCat().title"> </p>
-        <div data-bind="text:CurrentCat().count"></div>
+        <h2 data-bind="text:name"></h2>
+        <p data-bind="text: title"> </p>
+        <div data-bind="text:count"></div>
         
-        <img src="" alt="cute cat" data-bind = "click : incrementCounter, attr : {src : CurrentCat().imageSrc}">
+        <img src="" alt="cute cat" data-bind = "click : $root.incrementCounter, attr : {src : imageSrc}">
         <p> Nick Names </p>
-        <ul data-bind="foreach: CurrentCat().nickNames">
+        <ul data-bind="foreach: nickNames">
             <li>
         
                 <span data-bind="text: name"> </span>
