@@ -8,10 +8,22 @@
     <ul ></ul>
     <div >
 
-        <h2 data-bind="text:name"></h2>
-        <p data-bind = "text:level"> </p>
-        <div data-bind="text:count"></div>
-        <img src="" alt="cute cat" data-bind = "click : incrementCounter, attr : {src : imageSrc}">
+        <h2 data-bind="text:CurrentCat().name"></h2>
+        <p data-bind="text: CurrentCat().title"> </p>
+        <div data-bind="text:CurrentCat().count"></div>
+        
+        <img src="" alt="cute cat" data-bind = "click : incrementCounter, attr : {src : CurrentCat().imageSrc}">
+        <p> Nick Names </p>
+        <ul data-bind="foreach: CurrentCat().nickNames">
+            <li>
+        
+                <span data-bind="text: name"> </span>
+            </li>
+        </ul>
+        <!--ul data-bind = "foreach : nickNames">
+            <li data-bind = "text:$data"> </li>
+        <ul-->
+
 
     </div>
     <script src="js/lib/knockout-3.2.0.js"></script>
